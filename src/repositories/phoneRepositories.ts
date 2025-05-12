@@ -22,7 +22,7 @@ export async function insertPhone(phone: phoneInterface): Promise<number> {
     
     const [result] = await db.query<ResultSetHeader>(
         'INSERT INTO Telefone (IDCONTATO, NUMERO) VALUES (?, ?)',
-        [phone.id_contato, phone.numero]
+        [phone.idcontato, phone.numero]
     );
     return result.insertId;
 }

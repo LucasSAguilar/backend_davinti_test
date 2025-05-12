@@ -4,7 +4,7 @@ import contactRouter from "./router/contactRouter.js";
 import phoneRouter from "./router/phoneRouter.js";
 
 const app = express()
-const PORT = 3000
+const PORT = 3001
 
 // ----- 
 app.use(cors())

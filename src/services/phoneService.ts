@@ -44,7 +44,7 @@ export const addPhone = async (phone: phoneInterface): Promise<number> => {
 
 export function isPhone(data: any) {
     return (
-        typeof data.id_contato === 'number' &&
+        typeof data.idcontato === 'number' &&
         typeof data.numero === 'string'
     )
 }

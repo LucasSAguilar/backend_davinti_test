@@ -1,27 +1,26 @@
-DROP DATABASE AgendaContatos;
 CREATE DATABASE AgendaContatos;
 USE AgendaContatos;
 
-CREATE TABLE Contato (
-    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    NOME VARCHAR(100),
-    IDADE INT(3)
+CREATE TABLE contato (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    idade INT(3)
 );
 
-CREATE TABLE Telefone (
-    ID INT NOT NULL AUTO_INCREMENT,
-    IDCONTATO INT(14) NOT NULL,
-    NUMERO VARCHAR(16),
-    PRIMARY KEY (ID),
-    FOREIGN KEY (IDCONTATO) REFERENCES Contato(ID)
+CREATE TABLE telefone (
+    id INT NOT NULL AUTO_INCREMENT,
+    idcontato INT NOT NULL,
+    numero VARCHAR(16),
+    PRIMARY KEY (id),
+    FOREIGN KEY (idcontato) REFERENCES contato(id)
 );
 
-INSERT INTO Contato (NOME, IDADE) VALUES
+INSERT INTO contato (nome, idade) VALUES
 ('Ana Silva', 25),
 ('Carlos Souza', 32),
 ('Mariana Lima', 29);
 
-INSERT INTO Telefone (IDCONTATO, NUMERO) VALUES
+INSERT INTO telefone (idcontato, numero) VALUES
 (1, '(11) 91234-5678'),
 (1, '(11) 99876-5432'),
 (2, '(21) 98765-4321'),
